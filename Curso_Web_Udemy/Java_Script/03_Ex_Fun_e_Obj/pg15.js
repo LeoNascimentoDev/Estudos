@@ -7,33 +7,31 @@ que indica o aluno que teve o melhor desempenho nas notas.
 */
 
 
+const Todos_Alunos = []
 
-function Aluno(nome, notas)       // função construtora --> substitui o Object em "new object"
-{
-    this.Nome_Aluno = nome
-    this.Notas_Aluno = notas
-    this.Media_das_Notas = () => {
-        media_nota = 0
-        for (el in this.Notas_Aluno) {
-            media_nota += this.Notas_Aluno[el]
-        }
+Criar_Aluno = function (nome, notas) {
 
-        return ('A média das notas é: ' + media_nota / this.Notas_Aluno.length)
-    }
+    const Aluno = new Object
+    Aluno.Nome_Aluno = nome
+    Aluno.Notas_Aluno = notas
+    Aluno.id = Todos_Alunos.length
+    Todos_Alunos.push(Aluno)
 }
 
 
-const aluno1 = new Aluno('Lucas', [10, 5, 9])
-const aluno2 = new Aluno('Pedro', [10, 8, 9, 6])
+Media_das_Notas = function (aluno,notas) {
 
-const Todos_Alunos = { aluno1, aluno2 }
-//console.log(Todos_Alunos)
-
-function retorno(objalunos) {
-    for (i in objalunos) {
-        console.log(objalunos.Aluno)
-        return (objalunos.Aluno)//Nome_Aluno, objalunos.Aluno.Media_das_Notas()
+    notas = aluno.Notas_Aluno
+    media_nota = 0
+    for (el in notas) {
+        media_nota += notas[el]
     }
+    return ('A média das notas do aluno '+ aluno.Nome_Aluno+' é: ' + media_nota / notas.length)
 }
 
-retorno(Todos_Alunos)
+Criar_Aluno("Pedro", [10, 9, 8, 7])
+Criar_Aluno("Lucas", [18, 9, 28, 7])
+Criar_Aluno("Joaquim",[22,20,30,31])
+console.log(Todos_Alunos)
+console.log(Todos_Alunos[0].Nome_Aluno)
+console.log(Media_das_Notas(Todos_Alunos[0]))
