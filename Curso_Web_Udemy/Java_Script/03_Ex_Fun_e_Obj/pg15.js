@@ -42,7 +42,7 @@ function Melhor_Aluno(Todos) {
     let todas_notas = []
     let todas_medias = []
     let maior_media = []
-    let melhor_aluno =0
+    let melhor_aluno = 0
     for (i in Todos) {
         todas_notas.push(Todos[i].Notas_Aluno)
     }
@@ -51,8 +51,7 @@ function Melhor_Aluno(Todos) {
     }
     for (i in todas_medias) {
 
-        if (maior_media <= todas_medias[i]) 
-        {
+        if (maior_media <= todas_medias[i]) {
             maior_media = todas_medias[i]
             melhor_aluno = i
         }
@@ -63,11 +62,11 @@ function Melhor_Aluno(Todos) {
 // Criando os alunos
 
 Criar_Aluno("Pedro", [10, 9, 8, 7])
-Criar_Aluno("Lucas", [1, 2,3, 4])
-Criar_Aluno("Jo",[10,20,33,3])
-Criar_Aluno("Marcos",[10,2,3,3])
-Criar_Aluno("Maria",[10,20,33,3])
-Criar_Aluno("Julia",[10,20,33,33])
+Criar_Aluno("Lucas", [1, 2, 3, 4])
+Criar_Aluno("Jo", [10, 20, 33, 3])
+Criar_Aluno("Marcos", [10, 80, 83, 3])
+Criar_Aluno("Maria", [10, 20, 33, 3])
+Criar_Aluno("Julia", [10, 20, 33, 33])
 
 // Chamando as funções e mostrando no console
 
@@ -75,4 +74,27 @@ console.log(Todos_Alunos)
 console.log(Todos_Alunos[1].Nome_Aluno)
 console.log(Media_das_Notas(Todos_Alunos[4]))
 Melhor_Aluno(Todos_Alunos)
+
+// média das notas utilizando o map no array de notas 
+
+
+function Melhor_Aluno2(all) {
+
+    let maior =0
+    let melhor = 0
+    let a = all.map(function(e){ return e.Notas_Aluno }).map(function(e){return Media(e)})
+    a.forEach(function (el,id) 
+     {
+        if ( maior <= el) {
+            maior = el
+            melhor = id
+        }
+    }
+    )
+
+    return ('Maior média: '+ maior+ ', ' + 'Aluno: '+ all[melhor].Nome_Aluno)
+}
+
+console.log('\n')
+console.log(Melhor_Aluno2(Todos_Alunos))
 
