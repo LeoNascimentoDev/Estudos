@@ -1,0 +1,76 @@
+<h1>Utilizando Slide</h1>
+<div meu-slide>
+    <p>
+        <img src="https://www.devmedia.com.br/arquivos/Salas/Linguagem/CSharp/71/2343/thumb.jpg" alt="C#" width="600px">
+    </p>
+
+    <p>
+        <img src="https://blog.dankicode.com/wp-content/uploads/2018/03/introdu%C3%A7%C3%A3o-ao-javascript.png" alt="JS"
+            width="600px">
+    </p>
+
+    <p>
+        <img src="https://creativelycode.com/data/admin/2021/2/CSS_meme.gif" alt="CSS" width="600px">
+    </p>
+
+
+</div>
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    </style>
+
+
+
+<script>
+    
+    const elementsP = document.querySelectorAll('[meu-slide] >p')   // return NodeList contending p elements 
+    const arrayImg = Array.from(elementsP)
+    const size = arrayImg.length
+
+    function mover(ele, start, end, step, counter ) {
+        ele.style.display = "block"
+        const newStart = start + step
+
+        if (newStart < end) {
+    
+            ele.style.left = newStart + 'px'
+            setTimeout(() => mover(ele, newStart, end, step,counter), 25)
+        }
+        else {
+            counter += 1
+            play(counter)
+        }
+    }
+
+
+    function play(counter) {
+
+        counter == undefined ? 0 : counter
+        const max = innerWidth
+
+        if (counter < size) {
+            mover(arrayImg[counter], -1100, max+100, 6, counter)
+        }
+        else {
+            play(0)
+        }
+    }
+
+    play(0)
+
+
+
+
+
+
+
+
+
+</script>
+
+    <a href="../index.html">Voltar ao início</a>
+</html>
