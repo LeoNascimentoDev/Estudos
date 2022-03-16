@@ -5,7 +5,37 @@
     <meta charset="UTF-8">
     <title>Anatomia CSS</title>
     <style>
-        /* ... */
+        .selector {
+            /*Seleciona todos que tem classe "selector" */
+            color: #333;
+            /*Tem que usar o ; */
+
+            background-color: rgb(197, 197, 197);
+            font-size: 50px;
+
+            /*Pode colocar mais de uma, caso a primeira não funcione pega a próxima*/
+            font-family: Lucida, Arial;
+
+            /*algumas tags podem ter mais de uma propriedade "shorthand property"*/
+            border: solid 4px #550011;
+            text-align: center;
+
+            /*Pode realizar funções matemáticas para valores (tem que deixar espaço entre a operação) */
+            width: calc(100% - 200px);
+        }
+
+        /* Pseudo classe -> classe : "propriedade"   */
+        .selector:hover {
+            background-color: #555;
+            color: rgb(180, 180, 180);
+            font-size: 70px;    
+        }
+        /* Pseudo elemento -> classe :: "propriedade"   */
+        .selector::first-letter{
+            color:rgb(172, 126, 126)
+        }
+
+
     </style>
 </head>
 
