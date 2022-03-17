@@ -4,19 +4,60 @@
     <meta charset="UTF-8">
     <title>Overflow</title>
     <style>
-        div {
+        div[scroll] {
             font-size: 40px;
             height: 100px;
             width: 260px;
             border: solid 3px;
+            overflow: scroll;
+        }
+        div[hid] {
+            font-size: 40px;
+            height: 100px;
+            width: 260px;
+            border: solid 3px;
+            overflow: hidden;
+        }
+        div[auto] {
+            font-size: 40px;
+            height: 100px;
+            width: 260px;
+            border: solid 3px;
+            overflow:auto;
+        }
+        div[scrollx] {
+            font-size: 40px;
+            height: 100px;
+            width: 260px;
+            border: solid 3px;
+            overflow-x:scroll;
+            overflow-y:hidden;
+
         }
     </style>
 </head>
 <body>
-    <div>
+    <div scroll>
         TudoFuncionaMuitoBemEmCSS!!!
         Texto muito grande para caber nessa div.
         Já pensou qual será o comportamento padrão?
     </div>
+    <div hid>
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+    <div auto>
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+    <div scrollx>
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+ 
+  
 </body>
 </html>

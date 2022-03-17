@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+
+        /*Aqui leva-se em consideração que span e div herdam a altura de body que 
+        por sua vez herda de html, logo quando se trata de porcentagem o pai é quem 
+        tem o registro do valor da herança, no caso do quanto é 100% */
+
+        html{
+            height: 100%;
+        }
         body {
+            height: 100%;
             font-size: 40px;
             background-color: coral;
         }
@@ -17,12 +26,18 @@
         span {
             background-color: dodgerblue;
         }
+
+        span,div{
+            width: 50%;
+            height: 50%;
+            display: inline-block;
+        }
+
     </style>
 </head>
 
 <body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+    <div>Título</div><span>Subtítulo</span>
 </body>
 
 </html>

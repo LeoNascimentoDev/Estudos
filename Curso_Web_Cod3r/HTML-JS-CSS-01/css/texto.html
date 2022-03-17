@@ -9,12 +9,56 @@
         /* ... */
         * {
             margin: 0;
+
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 72pt;   /*72 pts = uma polegada */
+            font-size: 1in;   /*uma polegada */
+            font-size: 2rem; /* pega a referência da tag html*/
+            font-size: 2em; /* pega a referência mais próxima (div=50px) e multiplica*/
+
+            font-family: 'Indie Flower', cursive; /* pega do link referenciado acima */
+            word-spacing: 50px;
+            letter-spacing: 10px;
+            text-align: center;
+
+        }
+        .botao
+        {
+            width: 300px;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            font-size: 30px;
+            text-decoration: none;
+            border-radius:30px;
+        }
+        .destaque
+        {
+            color: aliceblue;
+            background: rgb(250, 129, 108);
+            box-shadow: 5px 5px 0px 0px rgba(116, 45, 33,.6);
+        }
+        .destaque:hover
+        {
+            background: rgb(146, 77, 65);
+            box-shadow: none;
+        }
+        .destaque:active
+        {
+            background: rgb(177, 138, 131);
+            box-shadow: none;
         }
     </style>
 </head>
