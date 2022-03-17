@@ -6,14 +6,47 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #aprovados {
+            color: aquamarine
+        }
+
+        #aninhado>div {
+            color: rgb(240, 255, 35);
+        }
+
+        p+ul {
+            /* just modify ul*/
+            color: red
+        }
+
+        p~span {
+            color: blue;
+        }
+        [feira=rua]
+        {
+            color: aqua;
+        }
+        [feira *= a33]
+        {
+            color: rgb(4, 0, 255);
+        }
+        ul:nth-child(5)
+        {
+            color: blue
+        }
     </style>
 </head>
 
 <body>
     <div class='tag'>
         <div class='tag'>
-            <p class='tag'>1</p>
+            <p class='tag' feira = 'rua'>1</p>
+            <p class='tag' feira = 'rua a33'>2</p>
+
             <ul class='tag' feira='casa'>
                 <li>Arroz</li>
                 <li>Feijão</li>

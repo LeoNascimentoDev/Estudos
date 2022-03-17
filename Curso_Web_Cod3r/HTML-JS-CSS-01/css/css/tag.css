@@ -1,0 +1,16 @@
+body{
+    font-size: 40px;
+}
+
+ul, ol {
+padding: 0px;
+}
+
+li{
+    margin-left: 50px;
+}
+
+.tag{
+    border: solid 3px;
+    margin: 5px;
+}

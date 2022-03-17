@@ -6,6 +6,30 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /*
+        
+        1. Regra com !important   -> UTILIZAR COMO EXCEÇÃO
+        2. Seletores específicos     [inline - ids - classes, atributos e pseudo-classes - elementos e pseudo-elementos]
+        3. Ultima regra processada
+            
+        Abaixo a regra em 'p' é processada por último, porém as regras sobre classe tem 
+        prioridade  
+        */
+
+        p.observacao{
+            padding: 50px;
+        }
+
+        .observacao{
+            background-color: rgb(255, 167, 167);
+            border: dashed 4px;
+            padding: 2px; /*não será realizado pois p.obervacao é mais específico*/
+        }
+
+        p{
+            font-size: 50px;
+            background-color: gray;
+        }
     </style>
 </head>
 
