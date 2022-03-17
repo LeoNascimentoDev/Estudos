@@ -7,7 +7,125 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        * {
+            margin: 0px;
+        }
+
+        html {
+            border: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-color: rgb(219, 219, 219);
+        }
+        
+        header {
+            background-color: rgb(56, 56, 56);
+            box-shadow: 0px 0px 10px 0px rgb(76, 149, 197);
+            font-size: 18px;
+            font-family: 'Oswald';
+            border: 0px;
+            margin: 0px;
+            position: absolute;
+            width: 100%;
+            height: 80px;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            
+        }
+        
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .menu {
+            position: block;
+            width: 280px;
+            padding: 0px;
+            border: 0px;
+            margin: 0px 0px 0px 300px;
+            display: none;
+            background-color: aquamarine;
+            color: aliceblue;
+            text-decoration: none;
+
+        }
+        li>a{
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            color: aliceblue;
+            background-color: rgb(122, 191, 255);
+            padding: 5px;
+            text-decoration: none;
+
+        }
+        
+        .autenticacao {
+            
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 25px;
+            text-align: right;
+
+        }
+
+        aside>a:nth-child(1) {
+            color: aliceblue;
+            text-decoration: none;
+
+        }
+
+        .botao {
+            color: aliceblue;
+            text-decoration: none;
+            text-align: center;
+            margin-left: 10px;
+            padding: 5px 15px 5px 15px;
+            border-radius: 30px;
+        }
+
+        .destaque {
+            background: rgb(197, 82, 62);
+            box-shadow: 2px 2px 0px 0px rgba(116, 45, 33);
+        }
+
+        .destaque:hover {
+            background: rgb(146, 77, 65);
+            box-shadow: none;
+        }
+
+        .destaque:active {
+            background: rgb(177, 138, 131);
+            box-shadow: none;
+        }
+
+
+
+        @media(max-width:600px) {
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media(min-width:600px) {
+            .autenticacao {
+                display: block;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -15,7 +133,7 @@
     <header class="cabecalho">
         <div class="logo">
             <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" width="250px" />
             </a>
         </div>
         <button class="menu-toggle">
