@@ -12,7 +12,7 @@ const color = {
     main:'#388eac',
     footer:'#385e3c',
     form: '#9f6581',
-    body: '#25b6',
+    body: '#2686',
 
     get(tagName)
     {

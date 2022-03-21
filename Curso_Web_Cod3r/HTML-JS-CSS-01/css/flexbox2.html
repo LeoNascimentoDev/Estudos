@@ -6,8 +6,38 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
-    </style>
+
+        .flex-container{
+            display: flex;
+            height: 400px;
+            width: 500px;
+        }
+        .flex-container div{
+            flex-grow: 1;
+            flex-shrink: 1;
+
+            width: 100px;
+        }
+        .flex-container div:nth-child(1)
+        {
+            flex-grow: 2;
+            flex-shrink: 2;
+        }
+        .flex-container div:nth-child(3)
+        {
+            background-color: blanchedalmond;
+             order: 1;  /* o padrão é 0, quanto maior a ordem é mostrado por último */
+            order: 0;
+            order: -1;
+            align-self: stretch; /*padrão*/
+
+            align-self: center;
+            
+
+
+        }
+
+</style>
 </head>
 
 <body>
@@ -17,7 +47,6 @@
         <div class="tag nolabel">3</div>
         <div class="tag nolabel">4</div>
     </div>
-    <script src="js/tag.js"></script>
 </body>
 
 </html>
