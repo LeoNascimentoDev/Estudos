@@ -22,8 +22,43 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
-    </script>
+
+        function log(){ 
+            console.log(this)
+        }
+
+        // adicionando a função log() no prototype das propriedades - vai ser chamado com "log"
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const list = document.querySelector('div ul')
+
+        //mostrara o elemento pai da list
+        list.parentNode.log()
+
+        //trás os filhos mas com o texto
+        list.childNodes.log()
+
+        //primeiro elemento
+        list.firstChild.log()
+
+        //próximo irmão do primeiro
+        list.firstChild.nextSibling.log()
+
+        //último irmão 
+        list.lastChild.log()
+
+        // penúltimo último irmão 
+        list.lastChild.previousSibling.log()
+
+        //html collection com todos od filhos e sem os textos
+        list.children.log()
+        // só elementos sem texto utilizar Element
+        list.firstElementChild.log()
+
+</script>
 </body>
 
 </html>

@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Selecionar Elementos #01</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body class="conteudo exercicio">
     <div id="primeiro">#primeiro</div>
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
-    <script>              
-        // ...
+    <script>
+
+        /* PARA SELECIONAR UM ELEMENTO POR UMA ID  e adicionar uma classe*/
+        /*se tiver mais de um id pega o primeiro, não é recomendável utilizar o mesmo id*/
+        document.getElementById("primeiro").classList.add('destaque')
+
+
+        /* PARA SELECIONAR UM ELEMENTO PELO NOME DA TAG */
+        /* retorna um html collections, interessante transformar em array*/
+        const divs = document.getElementsByTagName('div')
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add("destaque"))
+
+
+        /* PARA SELECIONAR UM ELEMENTO EM UMA CLASSE*/
+        /* se houver apenas um elemento, retornará uma lista com um elemento*/
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+
+        // Array.from(ultimosElementos).forEach(e=>e.classList.remove('destaque'))
+
+        // ou
+
+        for (let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+
+
+
     </script>
 </body>
+
 </html>

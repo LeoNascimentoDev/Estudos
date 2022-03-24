@@ -10,7 +10,20 @@
     <div>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
-    </script>
+
+        // id -> #
+        // universal  -> *
+        // classes -> .nome .nome2
+        // queryselector retorna um nodelist - foreach funciona
+        //selecionar todos menos algum (':not(nomeclasse)')
+        // selecionar filho (':nth-child(2)')
+        // 4º elemento do tipo "div" ou outro.. -> ('div:nth-of-type(4)')
+        // selecionar a partir de atributo personalizado ('[nomeAtributo]')
+
+        document.querySelector('#primeiro').classList.add('destaque')
+
+
+
+</script>
 </body>
 </html>

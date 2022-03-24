@@ -17,8 +17,17 @@
         </ul>
     </div>
     <script>
-        // ...
-    </script>
+
+        const lista =document.querySelector('div ul[destino="escritório"]')
+        //ou
+        // const lista =document.querySelector('#compras')
+        console.log('destino', lista.destino) //destino não é definido pelo navegador
+        console.log('destino', lista.getAttribute('destino')) //retornará escritório
+
+        console.log('destino', lista.setAttribute('empresa')) //altera o cria o atributo 
+
+
+</script>
 </body>
 
 </html>

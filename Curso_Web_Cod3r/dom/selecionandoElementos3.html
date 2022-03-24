@@ -31,7 +31,23 @@
         <button>Pesquisar</button>
     </form>
     <script>
-        // ...
+
+        // para acessar o formulário
+        // retorna um html collection
+        console.log(document.forms)
+        
+        // retorna nodelist
+        console.log(document.getElementsByName('pesquisa'))
+
+        // retorna html collection
+        console.log(document.getElementsByTagName('form'))
+
+        console.log(document.pesquisa.q)
+
+        // valor do formulário inicia com o valor setado a baixo
+        document.pesquisa.q.value= "Pesquise aqui..."
+
+
     </script>
 </body>
 
