@@ -9,9 +9,29 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a espera-5 href="https://google.com.br"
+        
+        <!--onclick = "navegarem5(event)"-->
+        
+        Google
+            
+        </a>
     </div>
     <script>
-        // ...
+        const a = document.querySelector('[espera-5]')
+        a.onclick = navegarem5(event)
+
+        function navegarem5(e){
+            e.preventDefault()
+            setTimeout(()=>{
+                // propiedade target é o elemento html que disparou o evento
+                const link = e.target.href
+                window.location.href = link
+            },3000)
+        }
+        // 
+
+
+
     </script>
 </body>

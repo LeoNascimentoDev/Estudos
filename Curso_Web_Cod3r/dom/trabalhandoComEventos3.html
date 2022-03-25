@@ -45,8 +45,33 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
-    </script>
+
+        const itens = document.querySelectorAll('[wm-dropzone] .item')
+        itens.forEach((i,idx)=>{
+
+            i.draggable = true
+
+
+            i.id = i.id || `draggable-item-${idx}`
+
+
+            i.ondragstart = e =>{
+                e.dataTransfer.setData('item-id', e.target.id)
+            }
+        })
+
+        const drop = document.querySelectorAll('[wm-dropzone')
+        drop.forEach(areaDrop =>{
+            areaDrop.ondragover = e => e.preventDefault()
+            areaDrop.ondrop = function(e){
+                const id = e.dataTransfer.getData('item-id')
+                const item = document.getElementById(id)
+                e.target.appendChild(item)  // permite adicionar elementos dentro do outro
+                //areaDrop.appendChild(item)  // não permite colocar elementos dentro do outro
+            }
+        })
+
+</script>
 </body>
 
 </html>
