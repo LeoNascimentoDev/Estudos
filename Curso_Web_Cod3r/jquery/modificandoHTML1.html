@@ -15,6 +15,22 @@
     <div id='conteudo3'></div>
 
     <script>
-        // ...
+        $('#conteudo1').append('<p>adicionado pelo Jquery</p>') // cria paragrafo com valor 
+
+        const elementosCriados = [
+
+            $('<li></li>').append('feijão'),
+            $('<li>').append('arroz'),
+
+
+        ]
+        const listaCompra =        $('<ul>compra<li>sorvete</li></ul>').append(elementosCriados) //prepend anexa  primeiro na 
+        // $('#conteudo2').append(listaCompra)  ou 
+        $(listaCompra).appendTo('#conteudo2')
+
+        $('#conteudo3').html('<p>123')
+        $('#conteudo3').html('<p>456')  // o html não anexa, ele modifica o html daquela seleção    
+
+
     </script>
 </body>

@@ -81,6 +81,26 @@
         <p>Cod3r Ensino</p>
     </footer>
     <script>
-        // ...
+        const comBorda = {'border' : 'solid 10px orange'}
+        const semBorda = {'border':'none'}
+        $('a[href="#link3"]').parent().css(comBorda) //pega i pai   
+        $('li:first').next().css(comBorda) // também funciona o prev
+        $('a[href="#link3"]').parent().next().css(comBorda) //pega o pai   // tam tem parents / parentsUntil /  
+
+
+        //misturando js com jquery
+        const elementoDom = document.getElementsByClassName('menu')
+        $(elementoDom).css(comBorda)
+
+
+        // para percorrer elementos 
+        $('main').children().each((i,e) => {
+            //i é o indice
+            // e é elemento da DOM pode ser trabalhado para inserção 
+            //para usar e como jquery element
+            $(e).css(comBorda).hide(500).show(500)
+        })
+
+
     </script>
 </body>

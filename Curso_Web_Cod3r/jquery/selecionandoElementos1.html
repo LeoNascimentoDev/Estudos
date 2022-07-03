@@ -49,6 +49,34 @@
     </form>
 
     <script>
-        // ...
+        
+        $(function (){
+
+            $('#feira').addClass('destaque').removeClass('destaque')        //seleciona elemento com id 'feira ' e adiciona uma classe
+            $('[wm-obrigatorio]').addClass('destaque').removeClass('destaque') // seleciona elemento com atributo personalizado
+            $('li.opcional').addClass('destaque').removeClass('destaque') // seleciona elemento li que tem a classe opcional 
+            $('div p span').addClass('destaque') // seleciona elemento span que esta dentro de um P que está dentro de uma div - não precisam ser descendentes diretos, para isso utilizar >
+            
+            // seletores exclusivos do jquery
+
+            $('li:first').css('background','green') // retorna o primeiro elemento li
+            $('li:gt(1)').css('background','red')// pega os elementos impares
+            $('li:odd').css('background','blue')// pega os elementos de índice maior que (X)
+            
+            $('li:not(:last)').css('color','pink')// seleciona  elementos li que não sejam o ultimo
+            $('li:contains("ã")').css('color','yellow')//seleciona elemento li que contem ã 
+
+            // formularios 
+
+            $('form*').hide(2000).show(1000) //  * seleciona todos os forms
+            $('form :text').css('background','green') //  * seleciona todos os forms 
+            $('form :file').css('background','green') //  * seleciona todos os forms 
+
+
+            
+        
+        
+        })
+
     </script>
 </body>

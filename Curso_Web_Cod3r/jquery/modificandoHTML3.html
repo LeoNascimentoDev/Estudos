@@ -20,6 +20,20 @@
             { nome: 'Julia', nota: 9.7 }
         ]
         
-        // ...
+        $('#conteudo').append('<table>')
+        $(pessoas).each((i,e)=>{
+            $('table').append('<tr> </tr>')
+        })
+        $('tr').append( '<td id="nome"></td><td id="nota"></td>')
+        
+        $('tr').each((i,e)=>{
+            $(e).children('#nome').append(pessoas[i].nome)
+            $(e).children('#nota').append(pessoas[i].nota)
+        })
+
+
+        
+
+
     </script>
 </body>

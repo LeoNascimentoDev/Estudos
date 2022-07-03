@@ -17,6 +17,34 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+
+        $("#div1").append(',2')
+        $("#div1").prepend('0,')
+        $('<spam>,3</spam>').appendTo('#div1')
+
+        $("#div2").before('<p>antes')
+        $("#div2").after('<p>depois')
+
+        $("<p>antes do 3 </p>").insertBefore('#div3')
+
+        // empacotar wrap
+
+        $("p.numero").wrap('<div>') // empacota os elementos selecionados com a <div>
+        $("p.numero").wrapAll('<div id=div4>') // empacota os elementos selecionados com a <div>
+            // $("p.numero").empty() // deixa a div vazia
+            $('#div3, #div2').prev().css('border','solid 5px orange')
+
+        $("#div3").append('<div id="div4">', '<div id="div5">')
+            $("#div4").append('<article> oioioi ')
+            $("#div5").append('<a>aiai</a> ')
+                
+                $('<spam>texto substituto</spam>').replaceAll('#div4 > article')
+                //ou     $('#div4 > article').replaceWith('spam>texto substituto</spam>')
+                $('#div5 > a').replaceWith(function(){
+                    return $('<p> </p>').html($(this).html()).append(' mudou um pouco')
+                })
+        
+            
+
     </script>
 </body>
