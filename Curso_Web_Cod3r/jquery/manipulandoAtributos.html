@@ -23,6 +23,41 @@
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
     <script>
-        // ...
+
+        function relogio(ele) {
+
+            const horaCerta = $('<p>').html('0')
+            const botaoMenos = $('<button></button>').html('-')
+            const botaoMais = $('<button></button>').html('+')
+            $(ele).append(horaCerta, botaoMais, botaoMenos)
+
+            const getInterval = () =>
+                parseInt($(ele).attr('wm-relogio'))   // attr retorna o valor do atributo //  função arrow retorna implicitamente o valor 
+
+
+            let temporizador = null
+            const iniciar = () => {
+                if (temporizador) clearInterval(temporizador)
+                temporizador = setInterval(() => {
+                    horaCerta.html(new Date().toLocaleString('pt-BR'))
+                }, getInterval())
+            }
+
+
+            const alterarInterval = (valor) => {
+                const delta = getInterval() + valor
+                $(ele).attr('wm-relogio', delta)
+                iniciar()
+            }
+
+            botaoMais.click(e => alterarInterval(-1000))
+            botaoMenos.click(e => alterarInterval(1000))
+            iniciar()
+
+        }
+
+        $('[wm-relogio]').each((i, e) => new relogio(e))
+
+
     </script>
 </body>
