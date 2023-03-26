@@ -1,5 +1,18 @@
-<!-- Título (jumbotron) -->
-<!-- Breadcrumb -->
+<!-- Título (jumbotron) = Espaço para título grande e infos padding 4 e margem em y de 1-->
+<div class="jumbotron p-4 my-1">
+    <h1 class="display-4">Fundamentos</h1>
+    <p class="lead lm-1">Alguns recursos importantes do Bootrstrap</p>
+</div>
+
+<!-- Breadcrumb (migalhas de pão. São os rastros da navegação pelo site)-->
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#/paginas/bemVindo.html">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Fundamentos</li>
+    </ol>
+</nav>
 
 <div class="exercicio">
     <h1>1. Tipografia -
@@ -25,12 +38,14 @@
         </small>
     </h1>
     <hr>
-<!-- Demonstrar espaços como margem e padding do boostrap -->
+    <!-- Demonstrar espaços como margem e padding do boostrap -->
 
     <div class="mb-5">margin bottom de 5</div>
     <div class="m-4 py-4">margin 4 e padding em y de 4</div>
     <div class="pt-3">padding top de 3</div>
 
+
+    <!-- Cores no texto e no fundo -->
     <h1 class="mt-5">3. Cores -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/utilities/colors/" target="_black">Documentação Oficial</a>
@@ -38,8 +53,10 @@
     </h1>
     <hr>
 
-    <!-- Cores -->
+    <div class="my-1 p-3 bg-primary text-light">EX1 Texto claro, cor primária</div>
+    <div class="my-1 p-3 bg-danger text-white">EX2 Texto branco, cor de perigo (vermelho padrão)</div>
 
+    <!-- Flex -->
     <h1 class="mt-5">4. Flex -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_black">Documentação Oficial</a>
@@ -47,7 +64,15 @@
     </h1>
     <hr>
 
-    <!-- Flex -->
+    <!-- sm = small, para celular por exemplo perde a capacidade do flex -->
+
+    <div class="d-sm-flex flex-column-reverse p-2">
+        <div class="align-self-end">01</div>
+        <div class="align-self-center">02</div>
+        <div class="align-self-start">03</div>
+    </div>
+
+    <!-- Imagens -->
 
     <h1 class="mt-5">5. Imagens -
         <small>
@@ -56,8 +81,17 @@
     </h1>
     <hr>
 
-    <!-- Imagens -->
+    <div class="p-2">
+        <!-- imagem centralizada com margens automáticas -->
+        <img src="/imgs/img1.png" alt="Img 01" class="mx-auto d-block" width="400">
+        <!-- imagem com thumb // a thumbnail ja é fluida -->
+        <img src="/imgs/img1.png" alt="Img 01" class="img-thumbnail" width="400">
+        <!-- imagem responsiva com flui -->
+        <img src="/imgs/img1.png" alt="Img 01" class="img-fluid" width="400">
+    </div>
 
+    <!-- Float -->
+    <!-- é recomendável que se utilize outras estratégias ao invés do float. Este pode gerar alguns efeitos colaterais.  -->
     <h1 class="mt-5">6. Float -
         <small>
             <a href="https://getbootstrap.com/docs/4.0/utilities/float/" target="_black">Documentação Oficial</a>
@@ -65,7 +99,11 @@
     </h1>
     <hr>
 
-    <!-- Float -->
+    <div class="my-1 p-3 float-left">Esquerda</div>
+    <div class="my-1 p-3 float-right">2 Direita</div>
+    <div class="my-1 p-3 float-lg-right">3 Flutua quando grande</div>
+
+
 </div>
 
 <style>
