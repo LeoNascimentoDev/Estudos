@@ -1,7 +1,8 @@
 <!-- Título (jumbotron) = Espaço para título grande e infos padding 4 e margem em y de 1-->
 <div class="jumbotron p-4 my-1">
     <h1 class="display-4">Componentes</h1>
-    <p class="lead lm-1">Exemplos de alguns componentes do Bootrstrap</div>
+    <p class="lead lm-1">Exemplos de alguns componentes do Bootrstrap
+</div>
 
 <!-- Breadcrumb (migalhas de pão. São os rastros da navegação pelo site)-->
 <nav class="mb-5">
@@ -21,6 +22,31 @@
 
 <!-- Botões -->
 
+<div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Salvar</button>
+        <button class="btn btn-secundary">Cancelar</button>
+        <button class="btn btn-outline-success">Finalizar</button>
+        <button class="btn btn-danger" disabled>Desabilitado</button>
+        <button class="btn btn-warning" data-toggle="button">Toggle</button>
+    </div>
+</div>
+
+<div class="btn-group mb-3">
+    <button class="btn btn-info">Esquerda</button>
+    <button class="btn btn-info active">Centro</button>
+    <button class="btn btn-info">Direita</button>
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown">Dropdown Toggle</button>
+    <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">Opção 01</a>
+        <a href="#" class="dropdown-item">Opção 02</a>
+    </div>
+</div>
+
+
 <h1 class="mt-5">2. Progresso -
     <small>
         <a href="https://getbootstrap.com/docs/4.0/components/progress/" target="_black">Documentação Oficial</a>
@@ -28,7 +54,27 @@
 </h1>
 <hr>
 
-<!-- Progresso -->
+<!-- Barras de progresso -->
+
+<div>
+    <div class="progress mb-4">
+        <div class="progress-bar" style="width: 28%;"></div>
+    </div>
+    <div class="progress mb-4">
+        <div class="progress-bar-striped bg-success" style="width: 50%;">50%
+        </div>
+    </div>
+
+    <!-- Barra com várias porcentagens diferentes -->
+    <div class="progress" style="height: 40px;">
+        <div class="progress-bar" style="width: 75%;">75%</div>
+        <div class="progress-bar bg-danger" style="width: 20%;">20%</div>
+        <div class="progress-bar bg-warning" style="width: 2%;">2%</div>
+    </div>
+
+
+</div>
+
 
 <h1 class="mt-5">3. Mensagens (Alertas) -
     <small>
@@ -39,6 +85,21 @@
 
 <!-- Alertas -->
 
+<div>
+    <div class="alert alert-success">
+        Alerta de sucesso
+    </div>
+    <div class="alert alert-warning">
+        Alerta de <strong>Alerta!</strong>
+    </div>
+    <div class="alert alert-danger">
+        Alerta de <strong>Erro </strong> Clique para 
+        <a href="#" class="alert-link">Detalhes do erro</a>
+    </div>
+    
+</div>
+
+
 <h1 class="mt-5">4. Paginação -
     <small>
         <a href="https://getbootstrap.com/docs/4.0/components/pagination/" target="_black">Documentação Oficial</a>
@@ -46,7 +107,7 @@
 </h1>
 <hr>
 
-<!-- Peginação -->
+<!-- Paginação -->
 
 <h1 class="mt-5">5. Tooltip -
     <small>
@@ -54,6 +115,31 @@
     </small>
 </h1>
 <hr>
+
+<nav>
+    <ul class="pagination">
+        <li class="page-item">
+            <a href="#" class="page-link">Anterior</a>
+        </li>
+        <li class="page-item">
+            <a href="#" class="page-link">1</a>
+        </li>
+        <li class="page-item active">
+            <a href="#" class="page-link">2</a>
+        </li>
+        <li class="page-item">
+            <a href="#" class="page-link">3</a>
+        </li>
+        <li class="page-item">
+            <a href="#" class="page-link">Próximo</a>
+        </li>
+
+    </ul>
+</nav>
+
+
+
+
 
 <!-- Tooltip -->
 
