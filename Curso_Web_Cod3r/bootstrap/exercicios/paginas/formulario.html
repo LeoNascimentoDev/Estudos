@@ -1,7 +1,8 @@
 <!-- Título (jumbotron) = Espaço para título grande e infos padding 4 e margem em y de 1-->
 <div class="jumbotron p-4 my-1">
     <h1 class="display-4">Formulário</h1>
-    <p class="lead lm-1">Exemplos de alguns formulários</div>
+    <p class="lead lm-1">Exemplos de alguns formulários
+</div>
 
 <!-- Breadcrumb (migalhas de pão. São os rastros da navegação pelo site)-->
 <nav class="mb-5">
@@ -18,4 +19,62 @@
 
 <!-- Formulário -->
 
-olá
+<div class="card">
+    <div class="card-header">
+        <h5 class="mb0">
+            Exemplo de um formulário:
+        </h5>
+    </div>
+    <div class="card-body">
+        <form action="" class="container-fluid">
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input id="nome" class="form-control" type="text" placeholder="Informe o nome..."></input>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="email" placeholder="Digite o seu email...">
+                        </div>
+                        <small class="form-text text-muted">
+                            Enviaremos um e-mail para confirmação.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="linguagem">Linguagem preferida</label>
+                        <select id="linguagem" class="form-control">
+                            <option value="">Selecione</option>
+                            <option>JS</option>
+                            <option>Java</option>
+                            <option>C#</option>
+                            <option>C++</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-row">
+                <div class="col-12">
+                    <button class="btn btn-success mr-2" type="submit">Enviar</button>
+                    <button class="btn btn-danger" type="reset">Limpar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
