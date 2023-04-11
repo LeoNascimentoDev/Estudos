@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body class="exercicio">
+
+
+    <!-- O Vue controla um trecho html pelo qual é marcado como uma div ou classe específica. Este trecho é chamado de template-->
+    <!-- a div será controlada pelo vue devido ao id "app" -->
+    <div id="app">
+        <p>
+            <!-- é possível realizar expressões, não recomenda-se códigos complexos -->
+            1) {{ 2+2 }}
+        </p>
+
+        <p>
+            <!-- é possível realizar chamar funções -->
+            2) {{ "teste".toUpperCase() }}
+        </p>
+        <p>
+            <!-- é possível utilizar os valores de "data" -->
+            3) Produto: {{ nome }}, R$ {{ valor}}, Desconto {{ desconto * 100 }}%
+        </p>
+        <p>
+            4) {{horaCerta()}}
+        </p>
+        <p>
+            5) Valor com desconto: R$ {{precoComDesconto}}
+        </p>
+    </div>
+
+    <script>
+
+        new Vue({
+            // A instancia de vue criada irá controlar o elemento html cujo o id é app
+            el: "#app",
+            // Objeto data que fornece informação para o elemento
+            data: {
+                nome: 'Caderno',
+                valor: 10.99,
+                desconto: 0.05
+            },
+            // Métodos para entregar retorno de funções 
+            methods: {
+                horaCerta() {
+                    return new Date().toLocaleString()
+                }
+            },
+            // valores computados para entregar valor já computado 
+            computed: {
+                precoComDesconto() {
+                    return this.valor * (1 - this.desconto)
+                }
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>
