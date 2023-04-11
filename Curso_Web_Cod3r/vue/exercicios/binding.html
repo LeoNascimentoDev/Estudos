@@ -9,14 +9,41 @@
 </head>
 
 <body class="exercicio">
-    <div id="vue">
+    <div id="app">
+      
         <p>
-            1: {{2+2}}
+                Aqui não ira aparecer o link clicável
+                <br>
+                Meu portfólio: {{link}}
         </p>
+        <p>
+            Aqui <strong> irá</strong>
+            aparecer o link
+            <br>
+            <!-- Os dois abaixo se comportam igual -->
+            <p><a :href="link" style="color: rgb(166, 212, 229); text-decoration: none"> Meu portfólio</a></p>
+            <p><a v-bind:href="link" style="color: rgb(166, 212, 229); text-decoration: none"> Meu portfólio</a></p>
+        </p>
+        <p>V Model</p>
+        O v-model é uma via de mão dupla, atualiza no "data" e no documento <br>
+        <input type="text" v-model="nome"><br>
+        <span> {{nome}} </span>
     </div>
     <script>
+        // vue instance 
         new Vue({
-            el: "#vue"
+            el: "#app",
+            data: {
+                nome: "Leonardo",
+                link: "https://github.com/LeoNascimentoDev"
+            },
+            // a função "analisa" / "vigia" algo específico e pode acionar códigos a partir disso
+            watch:{
+                nome(novoValor){
+                    console.log('Mudou o nome');
+                    alert("Mudou o nome")
+                }
+            }
         })
     </script>
 </body>
