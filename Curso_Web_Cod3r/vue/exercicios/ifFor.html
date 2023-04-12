@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>If & For</title>
+    <title>IF - FOR </title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+
+        <p v-for="(time, i) in times">
+            Posição no campeonato: {{time.nome}} - {{time.posicao}}º
+            <span v-if="time.posicao < 2"> - Campeão</span>
+            <span v-else-if="time.posicao == 4"> - Rebaixado</span>
+        </p>
+
+        <!-- O if e o else não renderizam o elemento no navegador, 
+       se for utilizar o "v-show" ele da display none prem o elemento está no documento -->
+
+    </div>
+
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                times: [
+                    { nome: "Vasco", posicao: "1" },
+                    { nome: "Botafogo", posicao: "3" },
+                    { nome: "Fluminense", posicao: "2" },
+                    { nome: "Flamengo", posicao: "4" }
+                ]
+            }
+
+        })
     </script>
 </body>
-</html>

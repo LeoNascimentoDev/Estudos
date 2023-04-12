@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Diretiva Personalizada</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+        oi
+        <p v-for="(time, i) in alunos">
+            Posição no campeonato: {{}}
+        </p>
+
+    </div>
+
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                times: [
+                    { nome: "Vasco", posicao: "1" },
+                    { nome: "Botafogo", posicao: "3" },
+                    { nome: "Fluminense", posicao: "2" },
+                    { nome: "Flamengo", posicao: "4" }
+                ]
+            }
+
+        })
     </script>
 </body>
-</html>

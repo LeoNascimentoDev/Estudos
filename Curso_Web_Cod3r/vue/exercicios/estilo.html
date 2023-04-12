@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Aplicando Estilo</title>
@@ -9,12 +10,42 @@
         .vermelho {
             background-color: red;
         }
+        .azul {
+            background-color: blue;
+        }
     </style>
 </head>
+
 <body class="exercicio">
 
+    <!-- Duas formas de aplicar a classe, a primeira através do bind :class abaixo -->
+    <!-- A segunda utilizando o methods e chamando a função aplicarCor -->
+    <div id="app"> Teste <br>
+        <button @click="aplicarCor" :class="{vermelho: cor}"> Mudar Cor</button>
+        <p> {{cor}} </p>
+    </div>
+
     <script>
-        // ...
+
+        new Vue({
+            el: "#app",
+            data: {
+                cor: false
+            },
+            methods: {
+                aplicarCor() {
+                    this.cor = !this.cor
+                    if (this.cor) {
+                        document.querySelector("#app").classList.add("azul")
+                    }
+                    else {
+                        document.querySelector("#app").classList.remove("azul")
+                    }
+                }
+            }
+        })
+
     </script>
 </body>
+
 </html>
