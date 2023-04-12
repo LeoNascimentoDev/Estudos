@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Eventos</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+
+        <p>
+            <!-- Diretiva "v-on:" faz um binding de um método a algum elemento -->
+            <button v-on:click="add">Somar +1 </button>
+            {{ contador }}
+            <!-- Diretiva "v-on" pode ser utilizada como @-->
+            <button @click="remove"> Diminuir -1</button>
+            <!-- Pode se utilizar pequenas expressões diretamente na chamada do método-->
+            <button @click="contador -= 5"> Diminuir -5</button>
+        </p>
+
+        <span @mousemove="pointerPosition">
+            Posição do mouse
+            x: {{x}}
+            y: {{y}}
+            <!-- É possível utilizar modificadores como o stop ou o prevent ... -->
+            <p @mousemove.stop>Aqui não faz a leitura</p>
+        </span>
+        <!-- modificador para input pode ser a tecla exemplo "enter" -->
+        <input type="text" @keyup.enter="alert">
+    </div>
+
     <script>
+        new Vue({
+            el: "#app",
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                remove() {
+                    this.contador--
+                },
+                pointerPosition(e) {
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alert(){
+                    alert("Teclou Enter")
+                }
+            }
+        })
         // ...
     </script>
 </body>
+
 </html>
