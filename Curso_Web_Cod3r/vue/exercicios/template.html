@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Template</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
-    
+    <div>
+
+        <p>o conteúdo abaixo, o template, é gerado pelo vue</p>
+    </div>
+    <div id="app">
+        <!-- o conteúdo vai ser criado dentro da vue instance, um template  -->
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                titulo: "VueJS",
+                subtitulo: "Framework Progressivo"
+            },
+            template:
+            // Para ser gerado, o conteúdo deve ser envolvido com algum elemento, uma tag
+            // pode ser fragment, div ou outra solução.
+            `<div>
+            <h1>{{titulo}}</h1>
+            <h3>{{subtitulo}}</h3>
+            </div>`
+        })
     </script>
 </body>
+
 </html>
