@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Componente</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
-<body class="exercicio">
+<div id="app">
+    <fragment>
+        <saudacao nome="Leonardo"> </saudacao>
+        <saudacao nome="Ana" /> 
+        <!-- a linha de baixo não irá aparecer devido a forma como o elemento html foi fechado em si mesmo na linha acima -->
+        <saudacao nome="Leonardo"> </saudacao>
+    </fragment>
+</div>
 
+<body class="exercicio">
     <script>
-        // ...
+
+        Vue.component('saudacao', {
+            props: ['nome'],
+            template: `
+            <div>Bom dia {{nome}}! </div>
+            `
+        })
+
+        new Vue({
+            el: "#app"
+        })
+
+
+
     </script>
 </body>
+
 </html>

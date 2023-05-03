@@ -11,24 +11,27 @@
 <body class="exercicio">
 
     <div id="app">
-        oi
-        <p v-for="(time, i) in alunos">
-            Posição no campeonato: {{}}
-        </p>
-
+        <input type="text" v-model="nome">
+        <!-- a diretiva v-inverter abaixo n é nativa, é criada pelo código aqui desenvolvido-->
+        <div v-inverter ="nome">O texto invertido aparecerá aqui</div>
     </div>
 
     <script>
+        //criação da diretiva
+        Vue.directive('inverter', {
+            //em cima do binding é possível receber o valor do elemento
+            componentUpdated(el, binding) {
+                const invertido = binding.value.split('').reverse().join('')
+                el.innerHTML = invertido
+            }
+        })
+
         new Vue({
             el: "#app",
             data: {
-                times: [
-                    { nome: "Vasco", posicao: "1" },
-                    { nome: "Botafogo", posicao: "3" },
-                    { nome: "Fluminense", posicao: "2" },
-                    { nome: "Flamengo", posicao: "4" }
-                ]
+                nome: ""
             }
+
 
         })
     </script>
